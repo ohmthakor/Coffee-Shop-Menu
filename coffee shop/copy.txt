@@ -1,0 +1,33 @@
+6
+Mocha 3.80 4.2 4.6 
+Americano 3.45 3.65 3.95
+Cappuccino 3.75 4.15 4.45
+Latte 3.95 4.45 4.95
+Black_Coffee 4.05 4.30 4.55
+Flat_White 3.90 4.15 4.35 
+
+
+
+
+Menu temp;
+	for (int i = 0; i < num_coffee; i++){
+		Coffee coffee_to_add = coffee_arr[i];
+
+		if (coffee_arr[i].get_small_cost() <= budget){
+			cout << "adding coffee to coffee_to_add" << endl;
+			coffee_to_add.set_small_cost(coffee_arr[i].get_small_cost());
+		}
+		if (coffee_arr[i].get_medium_cost() <= budget){
+			coffee_to_add.set_medium_cost(coffee_arr[i].get_medium_cost());
+		}
+		if (coffee_arr[i].get_large_cost() <= budget){
+			coffee_to_add.set_large_cost(coffee_arr[i].get_large_cost());
+			
+		}
+		if (coffee_to_add.get_small_cost() <= budget || 
+            coffee_to_add.get_medium_cost() <= budget || 
+            coffee_to_add.get_large_cost() <= budget) {
+            temp.add_to_menu(coffee_to_add);
+        }
+	}
+	cout << get_num_coffee();
